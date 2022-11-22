@@ -42,16 +42,16 @@ const modal = (item) => {
    modalElement.onclick = () => close();
 
    const modalContent = document.createElement('article');
+   modalContent.classList =
+      'relative flex flex-col items-center w-96 h-auto bg-white rounded-xl';
    modalContent.innerHTML = `
-   <article class="relative flex flex-col items-center w-96 h-auto bg-white rounded-xl">
       <img src="${baseUrl + item.image}" alt="${item.attributes.shape}" />
       <section class="p-2 text-center">
          <h2 class="text-2xl">${item.name}</h2>
          <h3 class="mt-2 text-xl">${item.attributes.shape}</h3>
          <p class="mt-2 p-4">${item.attributes.description}<p>
          <p class="mt-2 italic opacity-50">${item.attributes.taste}</p>
-      </section>
-   </article>`;
+      </section>`;
 
    const close = () => {
       modalElement.remove();
